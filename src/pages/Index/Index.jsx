@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./index.css";
 import IndexBanner from "../../components/indexBanner/IndexBanner";
 import Header from "../../components/header/header";
-import { SearchAnime, topSearches, trendingAnimes } from "../../services/animeServices";
+import {
+  SearchAnime,
+  topSearches,
+  trendingAnimes,
+} from "../../services/animeServices";
 import AnimeContainer from "../../components/animeContainer/animeContainer";
 import LoadingPage from "../../components/loadingPage/LoadingPage";
 
@@ -33,7 +37,6 @@ function Index() {
     try {
       const response = await SearchAnime(query);
       setAnimeResult(response.animes);
-      console.log('Anime search result:', response.animes);
     } catch (error) {
       console.error("Error in index while searching...", error);
     } finally {
@@ -63,12 +66,16 @@ function Index() {
         <div className="indexPage">
           <Header />
           <IndexBanner topSearch={top} onSearch={handleSearch} />
-          <AnimeContainer searchQuery={query} trending={trending} animeResult={animeResult} loading={loading} />
+          <AnimeContainer
+            searchQuery={query}
+            trending={trending}
+            animeResult={animeResult}
+            loading={loading}
+          />
         </div>
       )}
     </>
   );
-  
 }
 
 export default Index;

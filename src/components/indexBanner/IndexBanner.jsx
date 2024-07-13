@@ -57,7 +57,7 @@ function IndexBanner({ topSearch, onSearch }) {
               </div>
             )}
           </div>
-          <button className="iconBtn btnText">Watch An!me</button>
+          <button className="watchBtn btnText">Watch An!me</button>
         </div>
         <div className="bannerImgContainer">
           <img src={BannerImg} alt="Banner" />
@@ -68,3 +68,4 @@ function IndexBanner({ topSearch, onSearch }) {
 }
 
 export default IndexBanner;
+

@@ -73,4 +73,15 @@
 .header .right .dropdown ul li:hover {
   background-color: rgba(240, 240, 240, 0.3725490196);
   border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header .left h3 {
+    display: none;
+  }
 }/*# sourceMappingURL=header.css.map */

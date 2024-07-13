@@ -11,7 +11,7 @@ function Header() {
   };
 
   return (
-    <div className="header" onMouseLeave={toggleDropdown}>
+    <div className="header" >
       <div className="left">
         <img src={Logo} alt="logo" className="logo" />
         <h3>An!ee Hub</h3>

@@ -11,13 +11,14 @@
   display: flex;
   overflow: hidden;
   border-radius: 64px;
+  gap: 40px;
   background: rgba(255, 255, 255, 0.0509803922);
 }
 .indexBanner .indexBannerSub .left-container {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 380PX;
+  max-width: 380px;
 }
 .indexBanner .indexBannerSub .left-container h1 {
   color: var(--pink-color);
@@ -45,9 +46,51 @@
   line-height: 19.2px;
   text-wrap: wrap;
 }
+.indexBanner .indexBannerSub .bannerImgContainer {
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
 .indexBanner .indexBannerSub .bannerImgContainer img {
   max-width: 650px;
   display: flex;
   right: 0;
-  opacity: 75%;
+  opacity: 45%;
+}
+
+@media screen and (max-width: 1024px) {
+  .indexBanner {
+    padding: 20px 0px;
+  }
+  .indexBanner .indexBannerSub {
+    display: flex;
+    border-radius: 12px;
+    padding: 20px 10px;
+    flex-direction: column;
+  }
+  .indexBanner .indexBannerSub .left-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  .indexBanner .indexBannerSub .left-container .searchContainer {
+    max-width: 100%;
+  }
+  .indexBanner .indexBannerSub .left-container .topSearch {
+    margin: auto;
+  }
+  .indexBanner .indexBannerSub .left-container .watchBtn {
+    margin: auto;
+  }
+  .indexBanner .indexBannerSub .bannerImgContainer {
+    max-width: 100%;
+  }
+  .indexBanner .indexBannerSub .bannerImgContainer img {
+    opacity: 70%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .indexBanner .indexBannerSub {
+    flex-direction: column-reverse;
+  }
 }/*# sourceMappingURL=indexBanner.css.map */

@@ -7,13 +7,36 @@
   align-items: center;
   max-width: 1330px;
   margin: auto;
+  position: relative;
 }
 .animeContainer h1 {
   margin-right: auto;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 .animeContainer .animeContainerSub {
+  margin-top: 80px;
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
+}
+@media (max-width: 1200px) {
+  .animeContainer {
+    max-width: 100%;
+  }
+  .animeContainer .animeContainerSub {
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .animeContainer .animeContainerSub {
+    gap: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .animeContainer .animeContainerSub {
+    gap: 20px;
+  }
 }/*# sourceMappingURL=animeContainer.css.map */

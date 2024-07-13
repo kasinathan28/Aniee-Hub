@@ -1,68 +1,116 @@
 .indexBanner {
-    max-width: 1330px;
-    margin: 0 auto;
-    padding: 80px;
+  max-width: 1330px;
+  margin: 0 auto;
+  padding: 80px;
+  align-items: center;
+
+  .indexBannerSub {
+    justify-content: space-between;
     align-items: center;
+    padding: 0 0 0 80px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 64px;
+    gap: 40px;
+    background: #ffffff0d;
 
+    .left-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 380px;
+      h1 {
+        color: var(--pink-color);
+      }
 
-    .indexBannerSub {
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 0 0 80px;
+      .searchContainer {
         display: flex;
-        overflow: hidden;
+        gap: 12px;
+        max-width: 380px;
+        width: 100%;
+        justify-content: space-between;
+      }
 
-        border-radius: 64px;
+      input[type="text"] {
+        height: 50px;
+        padding: 0 20px;
+        font-size: 16px;
+        border-radius: 12px;
+        border: none;
+        width: 100%;
+      }
 
-        background: #ffffff0d;
-
-        .left-container {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            max-width: 380PX;
-            h1{
-                color: var(--pink-color);
-            }
-
-            .searchContainer {
-                display: flex;
-                gap: 12px;
-                max-width: 380px;
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            input[type="text"] {
-                height: 50px;
-                padding: 0 20px;
-                font-size: 16px;
-                border-radius: 12px;
-                border: none;
-                width: 100%;
-            }
-
-            .topSearch {
-                white-space: nowrap;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                line-height: 19.2px;
-                text-wrap: wrap;
-            }
-        }
-
-        .bannerImgContainer {
-            img {
-                max-width: 650px;
-                display: flex;
-                right: 0;
-                opacity: 75%;
-            }
-
-        }
-
+      .topSearch {
+        white-space: nowrap;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        line-height: 19.2px;
+        text-wrap: wrap;
+      }
     }
+
+    .bannerImgContainer {
+      max-width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+
+      img {
+        max-width: 650px;
+        display: flex;
+        right: 0;
+        opacity: 45%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .indexBanner {
+    padding: 20px 0px;
+    .indexBannerSub {
+      display: flex;
+      border-radius: 12px;
+
+      padding: 20px 10px;
+      flex-direction: column;
+      .left-container {
+        max-width: 100%;
+        width: 100%;
+        .searchContainer {
+          max-width: 100%;
+        }
+        .topSearch {
+          margin: auto;
+        }
+        .watchBtn {
+          margin: auto;
+        }
+      }
+      .bannerImgContainer {
+        // display: none;
+        max-width: 100%;
+        img {
+          opacity: 70%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
 }
 
 
+@media screen and (max-width: 768px) {
+
+    .indexBanner{
+        
+        .indexBannerSub{
+            flex-direction: column-reverse;
+            .left-container{
+                .searchContainer{
+                    
+                }
+            }
+        }
+    }
+}

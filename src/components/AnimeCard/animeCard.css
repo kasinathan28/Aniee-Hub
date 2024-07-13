@@ -1,18 +1,22 @@
 .aniCardContainer {
   display: flex;
   gap: 10px;
+  position: relative;
 }
 .aniCardContainer .leftContainer {
   display: flex;
   transform: rotate(180deg);
   writing-mode: vertical-rl;
+  align-items: center;
   gap: 12px;
   max-height: 250px;
   height: 100%;
 }
 .aniCardContainer .leftContainer .titleContainer {
-  display: flex;
-  align-items: center;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .aniCardContainer .leftContainer .rating {
   background: var(--pink-color);

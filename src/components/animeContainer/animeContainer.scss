@@ -1,22 +1,47 @@
 .animeContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    
-    align-items: center;
-    max-width: 1330px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  max-width: 1330px;
+  margin: auto;
+  position: relative;
 
-    h1{
-        margin-right: auto;
+  h1 {
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  .animeContainerSub {
+    margin-top: 80px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+    .animeContainerSub {
+      gap: 30px;
     }
+  }
+
+  @media (max-width: 768px) {
+    .animeContainerSub {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+   
 
     .animeContainerSub {
-        display: flex;
-        gap: 40px;
-        flex-wrap: wrap;
-        justify-content: center;
+      gap: 20px;
     }
+  }
 }
