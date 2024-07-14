@@ -1,0 +1,121 @@
+.animeDetails {
+  position: relative;
+  color: white;
+  display: flex;
+  height: 700px;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;
+
+    .subContent {
+      justify-content: center;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      width: 100%;
+      gap: 80px;
+      padding: 0 64px;
+      height: 100%;
+      align-items: center;
+      overflow: hidden;
+
+      .left {
+        display: flex;
+
+        img {
+          width: 250px;
+          margin-right: 20px;
+          border-radius: 10px;
+        }
+
+        .textContent {
+          margin: auto 0;
+          max-width: 700px;
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+          max-height: 50%;
+          overflow: hidden;
+          gap: 20px;
+          
+          h1 {
+            font-size: 3rem;
+            white-space: wrap;
+            font-family: "Poppins", "Arial";
+            line-height: 50px;
+            font-weight: 500;
+          }
+
+          .animeFlex {
+            display: flex;
+
+            gap: 2px;
+
+            .quality {
+              background: lightgreen;
+            }
+            .episodes {
+              background: lightblue;
+            }
+            div {
+              font-family: "Poppins", "Arial";
+              color: #000;
+              //   border-radius: 8px;
+              padding: 0 10px;
+              background: var(--pink-color);
+            }
+          }
+
+          p {
+            font-family: "Poppins";
+            white-space: pre-wrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 8;
+            -webkit-box-orient: vertical;
+          }
+        }
+      }
+      .extra {
+        width: 400px;
+        // backdrop-filter: blur(10px) saturate(180%);
+        background-color: rgba(163, 163, 163, 0.342);
+        padding: 0 20px;
+        height: 100%;
+        display: flex;
+        font-family: "Poppins";
+        flex-direction: column;
+        gap: 20px;
+        font-size: 12px;
+        justify-content: center;
+
+        .flexbox {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          border-top: 1px solid #cccccc1e;
+          border-bottom: 1px solid #cccccc1e;
+          padding: 10px 0;
+
+          .genre {
+            border: 1px solid #cccccc44;
+            padding: 0 10px;
+            border-radius: 8px;
+          }
+        }
+        .no-border {
+          border: none;
+        }
+      }
+    }
+  }
+}

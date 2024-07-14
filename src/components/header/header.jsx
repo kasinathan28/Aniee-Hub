@@ -11,23 +11,29 @@ function Header() {
   };
 
   return (
-    <div className="header" >
-      <div className="left">
-        <img src={Logo} alt="logo" className="logo" />
-        <h3>An!ee Hub</h3>
+    <div className="header-container">
+      <div className="header">
+        <div className="left">
+          <img src={Logo} alt="logo" className="logo" />
+          <h3>An!ee Hub</h3>
+        </div>
+        <div className="right">
+          <img
+            src={ProfileIcon}
+            className="profile"
+            alt="profile"
+            onClick={toggleDropdown}
+          />
+          {showDropdown && (
+            <div className="dropdown">
+              <ul>
+                <li>Sign Up</li>
+                <li>Login</li>
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
-      <div className="right">
-        <img src={ProfileIcon} className="profile" alt="profile"  onClick={toggleDropdown} />
-        {showDropdown && (
-          <div className="dropdown">
-            <ul>
-              <li>Sign Up</li>
-              <li>Login</li>
-            </ul>
-          </div>
-        )}
-      </div>
-      
     </div>
   );
 }

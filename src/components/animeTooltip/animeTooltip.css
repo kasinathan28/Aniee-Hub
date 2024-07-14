@@ -1,4 +1,5 @@
 /* animeTooltip.css */
+@import url("../../constants/variables.css");
 .toolTip {
   display: none;
   position: absolute;
@@ -11,16 +12,15 @@
   z-index: 10;
   max-width: 300px;
   width: 100%;
-  max-height: 350px;
-  height: 100%;
+  max-height: 250px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
   font-size: 14px;
   line-height: 1.4;
   backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
+  -webkit-backdrop-filter: blur(10px) saturate(18%);
+  background-color: rgba(23, 27, 39, 0.5);
 }
 .toolTip .tooltipSub {
   position: relative;
@@ -43,6 +43,43 @@
   padding: 10px;
   z-index: 2; /* Ensure text is above the blurred image */
   color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.toolTip .tooltipContent p {
+  font-size: 14px;
+}
+.toolTip .tooltipContent .sub {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.toolTip .tooltipContent .sub .rating,
+.toolTip .tooltipContent .sub .quality,
+.toolTip .tooltipContent .sub .episodes,
+.toolTip .tooltipContent .sub .type {
+  border-radius: 12px;
+  border: none;
+  background: var(--pink-color);
+  padding: 0 5px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.toolTip .tooltipContent .sub .quality {
+  background: lightgreen;
+}
+.toolTip .tooltipContent .sub .episodes {
+  background: lightblue;
+}
+.toolTip .tooltipContent .sub .type {
+  background: lightgray;
 }
 
 .aniCardContainer:hover .toolTip {

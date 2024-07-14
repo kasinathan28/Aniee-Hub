@@ -8,7 +8,6 @@ body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  transition: 0.2s ease all;
   margin: 0px;
 }
 
@@ -234,3 +233,7 @@ a:hover {
     opacity: 0;
   }
 }
+
+
+
+/* Spinner css */

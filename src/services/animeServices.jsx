@@ -44,7 +44,7 @@ export const getAnimeInfo = async (id) => {
       throw new Error("Id parameter is required");
     }
     const response = await axios.get(`${base_url}/anime/info?id=${id}`);
-    return response.data.anime.info;
+    return response.data.anime;
   } catch (error) {
     console.error("Error while fetching anime info:", error.message);
     if (error.response) {
