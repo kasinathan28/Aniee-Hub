@@ -1,6 +1,9 @@
 import axios from "axios";
+// Update the IP address with your machine's local network IP
+const localNetworkIP = "192.168.1.5"; // Replace with your actual IP address
 
-const base_url = "http://localhost:4000";
+const isLocalhost = window.location.hostname === "localhost";
+const base_url = isLocalhost ? "http://localhost:4000" : `http://${localNetworkIP}:4000`;
 
 export const topSearches = async () => {
   const response = await axios.get(`${base_url}/anime/home`);

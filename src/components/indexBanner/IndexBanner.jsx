@@ -10,7 +10,6 @@ function IndexBanner({ topSearch, onSearch }) {
   const [topSearches, setTopSearches] = useState([]);
   const [query, setQuery] = useState("");
 
-
   useEffect(() => {
     if (topSearch && Array.isArray(topSearch)) {
       setTopSearches(topSearch);
@@ -18,13 +17,18 @@ function IndexBanner({ topSearch, onSearch }) {
     }
   }, [topSearch]);
 
-  // passing the search query to the index page with props "onSearch"
   const handleInputChange = (e) => {
     setQuery(e.target.value);
   };
 
   const handleSearchClick = () => {
     onSearch(query);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearchClick();
+    }
   };
 
   return (
@@ -38,6 +42,7 @@ function IndexBanner({ topSearch, onSearch }) {
               placeholder="Search Anime..."
               value={query}
               onChange={handleInputChange}
+              onKeyDown={handleKeyDown} // Listen for key down events
             />
             <button className="iconBtn" onClick={handleSearchClick}>
               <FontAwesomeIcon icon={faSearch} size="xl" />
@@ -68,4 +73,3 @@ function IndexBanner({ topSearch, onSearch }) {
 }
 
 export default IndexBanner;
-

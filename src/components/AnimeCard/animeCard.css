@@ -49,4 +49,25 @@
   height: 250px;
   -o-object-fit: fill;
      object-fit: fill;
+}
+@media (max-width: 768px) {
+  .aniCardContainer .aniCard {
+    max-width: 100%;
+  }
+  .aniCardContainer .aniCard img {
+    height: auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  .aniCardContainer .aniCardContainer .leftContainer {
+    display: none;
+  }
+  .aniCardContainer .aniCard {
+    max-width: 100%;
+  }
+  .aniCardContainer .leftContainer {
+    font-size: 14px;
+    gap: 6px;
+    display: none;
+  }
 }/*# sourceMappingURL=animeCard.css.map */

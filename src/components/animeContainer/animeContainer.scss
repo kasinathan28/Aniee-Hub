@@ -17,14 +17,14 @@
   }
 
   .animeContainerSub {
-    margin-top: 80px;
+    margin-top: 60px;
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  @media (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
     max-width: 100%;
     .animeContainerSub {
       gap: 30px;
@@ -33,15 +33,13 @@
 
   @media (max-width: 768px) {
     .animeContainerSub {
-      gap: 20px;
+
     }
   }
 
   @media (max-width: 480px) {
-   
-
     .animeContainerSub {
-      gap: 20px;
+
     }
   }
 }

@@ -7,7 +7,7 @@
   background: var(--primary-color);
 
   .header {
-    max-width: 1440px;
+    max-width: 100%;
     padding: 20px 20px;
     font-size: var(--primary-font-size);
     font-weight: var(--primary-font-weight);
@@ -28,6 +28,7 @@
       }
     }
   
+
     .right {
       border: 1px solid #fff;
       display: flex;
@@ -51,7 +52,7 @@
       .dropdown {
         position: absolute;
         top: 100%;
-        right: 0;
+        right: 100;
         background-color: var(--primary-color);
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -92,6 +93,7 @@
 
 @media screen and (max-width: 480px) {
   .header {
+    padding: 0px;
     .left {
       h3 {
         display: none;

@@ -35,7 +35,7 @@ const AnimeCard = ({ anime }) => {
       <div className="leftContainer">
         <div className="rating">{anime.rank || anime.rating || "N/A"}</div>
         <div className="titleContainer">
-          <p>{anime.name} ⭐</p>
+          <p>{anime.name}</p>
         </div>
       </div>
       <div className="aniCard">

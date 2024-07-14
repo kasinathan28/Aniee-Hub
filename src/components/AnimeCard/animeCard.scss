@@ -2,6 +2,7 @@
   display: flex;
   gap: 10px;
   position: relative;
+  // margin: auto;
 
   .leftContainer {
     display: flex;
@@ -55,4 +56,31 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .aniCard {
+      max-width: 100%;
+      img {
+        height: auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .aniCardContainer {
+
+     
+
+      .leftContainer {
+        display: none;
+      }
+    }
+    .aniCard {
+      max-width: 100%;
+    }
+    .leftContainer {
+      font-size: 14px;
+      gap: 6px;
+      display: none;
+    }
+  }
 }

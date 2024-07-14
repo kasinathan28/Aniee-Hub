@@ -37,7 +37,7 @@ function AnimmeDetails() {
             </div>
 
             <div className="textContent">
-              <p>
+              <p className="title">
                 Home {"\u00B7"} {mainData?.stats?.type} {"\u00B7"}{" "}
                 {mainData.name}
               </p>

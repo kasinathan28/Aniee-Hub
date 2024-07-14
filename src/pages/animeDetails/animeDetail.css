@@ -48,7 +48,6 @@
   font-size: 3rem;
   white-space: wrap;
   font-family: "Poppins", "Arial";
-  line-height: 50px;
   font-weight: 500;
 }
 .animeDetails .content .subContent .left .textContent .animeFlex {
@@ -103,4 +102,80 @@
 }
 .animeDetails .content .subContent .extra .no-border {
   border: none;
+}
+@media screen and (max-width: 1024px) {
+  .animeDetails {
+    height: auto;
+  }
+  .animeDetails .content .subContent {
+    gap: 40px;
+    padding: 0 32px;
+  }
+  .animeDetails .content .subContent .left {
+    align-items: center;
+  }
+  .animeDetails .content .subContent .left img {
+    width: 250px;
+  }
+  .animeDetails .content .subContent .left .textContent h1 {
+    font-size: 2.5rem;
+  }
+  .animeDetails .content .subContent .extra {
+    width: 300px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 992px) {
+  .animeDetails .content .subContent {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
+  }
+  .animeDetails .content .subContent .extra {
+    width: 100%;
+    font-size: 10px;
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .animeDetails .content .subContent {
+    gap: 10px;
+    padding: 0 8px;
+  }
+  .animeDetails .content .subContent .left img {
+    max-width: 200px;
+  }
+  .animeDetails .content .subContent .left .textContent h1 {
+    line-height: 45px;
+    font-size: 24px;
+  }
+  .animeDetails .content .subContent .extra {
+    font-size: 9px;
+  }
+}
+@media (max-width: 480px) {
+  .animeDetails .content .subContent {
+    gap: 5px;
+    padding: 20px 4px;
+  }
+  .animeDetails .content .subContent .left {
+    flex-direction: column;
+    align-items: center;
+  }
+  .animeDetails .content .subContent .left .animeFlex {
+    justify-content: center;
+  }
+  .animeDetails .content .subContent .left .textContent {
+    text-align: center;
+  }
+  .animeDetails .content .subContent .left .textContent p {
+    text-align: left;
+  }
+  .animeDetails .content .subContent .left .textContent .title {
+    text-align: center;
+  }
+  .animeDetails .content .subContent .extra {
+    max-width: 90%;
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=animeDetail.css.map */
