@@ -14,10 +14,12 @@ const AnimeToolTip = ({ anime, loading }) => {
               <>
                 <h3 className="title">{anime.name}</h3>
                 <div className="sub">
-                  <div className="rating">{anime.stats.rating}</div>
-                  <div className="quality">{anime.stats.quality}</div>
-                  <div className="episodes">{anime.stats.episodes.sub}</div>
-                  <div className="type">{anime.stats.type}</div>
+                  <div className="rating">{anime.stats?.rating}</div>
+                  <div className="quality">{anime.stats?.quality}</div>
+                  <div className="episodes">
+                    {anime.stats?.episodes.sub || "N/A"}
+                  </div>
+                  <div className="type">{anime.stats?.type}</div>
                 </div>
                 <p className="description">{anime.description}</p>
               </>

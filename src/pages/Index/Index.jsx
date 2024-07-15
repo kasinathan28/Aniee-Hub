@@ -3,12 +3,15 @@ import "./index.css";
 import IndexBanner from "../../components/indexBanner/IndexBanner";
 import Header from "../../components/header/header";
 import {
+  fetchAnimeNews,
+  getUpcomingAnime,
   SearchAnime,
   topSearches,
   trendingAnimes,
 } from "../../services/animeServices";
 import AnimeContainer from "../../components/animeContainer/animeContainer";
 import LoadingPage from "../../components/loadingPage/LoadingPage";
+import TrendingPosts from "../../components/trendingPost/TrendingPosts";
 
 function Index() {
   const [mainLoading, setMainLoading] = useState(true);
@@ -17,18 +20,28 @@ function Index() {
   const [trending, setTrending] = useState({});
   const [loading, setLoading] = useState(false);
   const [animeResult, setAnimeResult] = useState([]);
+  const [upComing, setUpComing] = useState([]);
+  const [news, setNews] = useState([]);
 
   useEffect(() => {
-    const fetchTopSearches = async () => {
+    const fetchData = async () => {
       try {
-        const response = await topSearches();
-        setTop(response);
+        const responseTop = await topSearches();
+        const responseUpcoming = await getUpcomingAnime();
+        const responseTrending = await trendingAnimes();
+        const responseNews = await fetchAnimeNews();
+
+        setTop(responseTop);
+        setUpComing(responseUpcoming);
+        setTrending(responseTrending);
+        setNews(responseNews);
+        setMainLoading(false);
       } catch (error) {
-        console.error("Error fetching top searches:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchTopSearches();
+    fetchData();
   }, []);
 
   const handleSearch = async (query) => {
@@ -44,20 +57,6 @@ function Index() {
     }
   };
 
-  useEffect(() => {
-    const fetchTrendingAnimes = async () => {
-      try {
-        const response = await trendingAnimes();
-        setTrending(response);
-        setMainLoading(false);
-      } catch (error) {
-        console.error("Error fetching trending animes in component:", error);
-      }
-    };
-
-    fetchTrendingAnimes();
-  }, []);
-
   return (
     <>
       {mainLoading ? (
@@ -71,7 +70,9 @@ function Index() {
             trending={trending}
             animeResult={animeResult}
             loading={loading}
+            upComing={upComing}
           />
+          <TrendingPosts news={news} />
         </div>
       )}
     </>

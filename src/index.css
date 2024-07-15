@@ -80,7 +80,7 @@ ul {
 .btnText {
   font-size: 1.5em;
   font-family: var(--primary-font);
-  color: #fff;
+  color: #000;
 }
 
 input:focus {

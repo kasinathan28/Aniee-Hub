@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./indexBanner.css";
 import BannerImg from "../../assets/anw-min.png";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+// import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Loader from "../loader";
 
 function IndexBanner({ topSearch, onSearch }) {
@@ -33,40 +34,38 @@ function IndexBanner({ topSearch, onSearch }) {
 
   return (
     <div className="indexBanner">
-      <div className="indexBannerSub">
-        <div className="left-container">
-          <h1>An!ee Hub</h1>
-          <div className="searchContainer">
-            <input
-              type="text"
-              placeholder="Search Anime..."
-              value={query}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown} // Listen for key down events
-            />
-            <button className="iconBtn" onClick={handleSearchClick}>
-              <FontAwesomeIcon icon={faSearch} size="xl" />
-            </button>
-          </div>
-          <div className="topSearch">
-            <p>
-              <strong>Top Search :</strong>
-            </p>
-            {loading ? (
-              <Loader/>
-            ) : (
-              <div className="topText">
-                {topSearches.map((anime, index) => (
-                  <p key={index}>{anime.name}⭐</p>
-                ))}
-              </div>
-            )}
-          </div>
-          <button className="watchBtn btnText">Watch An!me</button>
+      <div className="left-container">
+        <h1>An!ee Hub</h1>
+        <div className="searchContainer">
+          <input
+            type="text"
+            placeholder="Search Anime..."
+            value={query}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown} // Listen for key down events
+          />
+          <button className="iconBtn" onClick={handleSearchClick}>
+            <FontAwesomeIcon icon={faSearch} size="xl" className="btnText"  />
+          </button>
         </div>
-        <div className="bannerImgContainer">
-          <img src={BannerImg} alt="Banner" />
+        <div className="topSearch">
+          <p>
+            <strong>Top Search :</strong>
+          </p>
+          {loading ? (
+            <Loader />
+          ) : (
+            <div className="topText">
+              {topSearches.map((anime, index) => (
+                <p key={index}>{anime.name}⭐</p>
+              ))}
+            </div>
+          )}
         </div>
+        <button className="watchBtn btnText">Watch An!me</button>
+      </div>
+      <div className="bannerImgContainer">
+        <img src={BannerImg} alt="Banner" />
       </div>
     </div>
   );

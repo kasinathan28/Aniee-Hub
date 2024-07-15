@@ -43,10 +43,10 @@ function AnimmeDetails() {
               </p>
               <h1>{mainData.name}</h1>
               <div className="animeFlex">
-                <div className="rating">{mainData?.stats?.rating}</div>
-                <div className="quality">{mainData?.stats?.quality}</div>
-                <div className="episodes">{mainData?.stats?.episodes?.sub}</div>
-                <div className="episodes">{mainData?.stats?.episodes?.sub}</div>
+                <div className="rating">{mainData?.stats?.rating || "N/A"}</div>
+                <div className="quality">{mainData?.stats?.quality || "N/A"}</div>
+                <div className="episodes">{mainData?.stats?.episodes?.sub || "N/A"}</div>
+                <div className="episodes">{mainData?.stats?.episodes?.sub || "N/A"}</div>
               </div>
               <p>{mainData.description}</p> 
             </div>
@@ -54,28 +54,31 @@ function AnimmeDetails() {
           {extra ? (
             <div className="extra">
               <p>
-                <strong>Japanese:</strong> {extra?.japanese}
+                <strong>Japanese:</strong> {extra?.japanese  || "N/A"}
+
               </p>
               <p>
-                <strong>Episodes:</strong> {mainData?.stats?.episodes?.sub}
+                <strong>Episodes:</strong> {mainData?.stats?.episodes?.sub  || "N/A"}
+
               </p>
               <p>
-                <strong>Duration:</strong> {extra?.duration}
+                <strong>Duration:</strong> {extra?.duration   || "N/A"}
+
               </p>
               <p>
-                <strong>Synonyms:</strong> {extra?.synonyms}
+                <strong>Synonyms:</strong> {extra?.synonyms || "N/A"}
               </p>
               <p>
-                <strong>Aired at:</strong> {extra?.aired}
+                <strong>Aired at:</strong> {extra?.aired || "N/A"}
               </p>
               <p>
-                <strong>Premiered:</strong> {extra?.premiered}
+                <strong>Premiered:</strong> {extra?.premiered || "N/A"}
               </p>
               <p>
-                <strong>Status:</strong> {extra?.status}
+                <strong>Status:</strong> {extra?.status || "N/A"}
               </p>
               <p>
-                <strong>MAL Score:</strong> {extra?.malscore}
+                <strong>MAL Score:</strong> {extra?.malscore || "N/A"}
               </p>
               <div className="flexbox">
                 <p>
@@ -88,7 +91,7 @@ function AnimmeDetails() {
                 ))}
               </div>
               <p>
-                <strong>Studio:</strong> {extra?.studios}
+                <strong>Studio:</strong> {extra?.studios || "N/A"}
               </p>
               <div className="flexbox no-border">
                 <p>

@@ -3,13 +3,25 @@ import axios from "axios";
 const localNetworkIP = "192.168.1.5"; // Replace with your actual IP address
 
 const isLocalhost = window.location.hostname === "localhost";
-const base_url = isLocalhost ? "http://localhost:4000" : `http://${localNetworkIP}:4000`;
+const base_url = isLocalhost
+  ? "http://localhost:4000"
+  : `http://${localNetworkIP}:4000`;
 
+const newsAPI_URL = "https://api.jikan.moe/v4/anime/1/news";
+
+// Api for ogetting top Searched Anime
 export const topSearches = async () => {
   const response = await axios.get(`${base_url}/anime/home`);
-  return response.data.top10Animes.today.slice(0, 3);
+  return response.data.top10Animes.today.slice(0, 5);
 };
 
+// Api for fetching upcomming anime
+export const getUpcomingAnime = async () => {
+  const response = await axios.get(`${base_url}/anime/home`);
+  return response.data.topUpcomingAnimes;
+};
+
+// Api for fetching trending anime
 export const trendingAnimes = async () => {
   try {
     const response = await axios.get(`${base_url}/anime/home`);
@@ -20,6 +32,7 @@ export const trendingAnimes = async () => {
   }
 };
 
+// Api for searching anime
 export const SearchAnime = async (title) => {
   try {
     if (!title) {
@@ -56,3 +69,16 @@ export const getAnimeInfo = async (id) => {
     }
   }
 };
+
+// Fetching anime News
+export const fetchAnimeNews =  async () => {
+  try {
+    const response = await axios.get(newsAPI_URL);
+    return response.data.data
+
+  } catch (error) {
+    console.error('Error fetching anime news:', error);
+    throw error;
+  }
+};
+

@@ -4,7 +4,8 @@ import Loader from "../loader";
 import AnimeSearchCard from "../AnimeSearchCard/AnimeSearchCard";
 import AnimeCard from "../AnimeCard/AnimeCard";
 
-function AnimeContainer({ searchQuery, trending, animeResult, loading }) {
+function AnimeContainer({ searchQuery, trending, animeResult, loading , upComing}) {
+
   return (
     <div className="animeContainer">
       {loading ? (
@@ -30,6 +31,19 @@ function AnimeContainer({ searchQuery, trending, animeResult, loading }) {
               <div className="animeContainerSub">
                 {trending && trending.length > 0 ? (
                   trending.map((anime, index) => (
+                    <AnimeCard key={index} anime={anime} />
+                  ))
+                ) : (
+                  <Loader />
+                )}
+              </div>
+
+
+              {/* Top Upcoming */}
+              <h1>Top Upcoming</h1>
+              <div className="animeContainerSub">
+                {upComing && upComing.length > 0 ? (
+                  upComing.map((anime, index) => (
                     <AnimeCard key={index} anime={anime} />
                   ))
                 ) : (

@@ -1,117 +1,144 @@
 .indexBanner {
-  max-width: 1330px;
+  position: relative;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 80px;
+  display: flex;
   align-items: center;
+  background: #ffffff0d;
+  border-radius: 64px;
+  overflow: hidden;
+  margin: 60px auto;
+}
 
-  .indexBannerSub {
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 0 80px;
-    display: flex;
-    overflow: hidden;
-    border-radius: 64px;
-    gap: 40px;
-    background: #ffffff0d;
+.left-container {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 500px; 
+  padding: 40px 0px;
+  border-radius: 16px;
+  width: 100%;
+}
 
-    .left-container {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      max-width: 380px;
-      h1 {
-        color: var(--pink-color);
-      }
+.left-container h1 {
+  color: var(--pink-color);
+}
 
-      .searchContainer {
-        display: flex;
-        gap: 12px;
-        max-width: 380px;
-        width: 100%;
-        justify-content: space-between;
-      }
+.searchContainer {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: space-between;
+}
 
-      input[type="text"] {
-        height: 50px;
-        padding: 0 20px;
-        font-size: 16px;
-        border-radius: 12px;
-        border: none;
-        width: 100%;
-      }
+input[type="text"] {
+  height: 50px;
+  padding: 0 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+}
 
-      .topSearch {
-        white-space: nowrap;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        line-height: 19.2px;
-        text-wrap: wrap;
-      }
-    }
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--pink-color);
+}
 
-    .bannerImgContainer {
-      max-width: 50%;
-      display: flex;
-      flex-wrap: wrap;
+.topSearch {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  line-height: 22.6px;
+  font-family: "Poppins",Arial;
+  letter-spacing: normal;
+  font-size: 14px;
+}
 
-      img {
-        max-width: 650px;
-        display: flex;
-        right: 0;
-        opacity: 45%;
-      }
-    }
-  }
+.topSearch p {
+  margin: 0;
+}
+
+.watchBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--pink-color);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.bannerImgContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bannerImgContainer img {
+  width: auto;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  opacity: 0.45;
 }
 
 @media screen and (max-width: 1024px) {
   .indexBanner {
-    padding: 20px 0px;
+    padding: 20px;
     margin-bottom: 40px;
-    .indexBannerSub {
-      display: flex;
-      border-radius: 12px;
+    flex-direction: column;
+    border-radius: 12px;
+  }
 
-      padding: 20px 10px;
-      flex-direction: column;
-      .left-container {
-        max-width: 100%;
-        width: 100%;
-        .searchContainer {
-          max-width: 100%;
-        }
-        .topSearch {
-          margin: auto;
-        }
-        .watchBtn {
-          margin: auto;
-        }
-      }
-      .bannerImgContainer {
-        // display: none;
-        max-width: 100%;
-        img {
-          opacity: 70%;
-          max-width: 100%;
-        }
-      }
-    }
+  .left-container {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    transform: translateY(0);
+    left: 0;
+    top: 0;
+    padding: 20px;
+  }
+
+  .searchContainer {
+    max-width: 100%;
+  }
+
+  .topSearch {
+    margin: auto;
+  }
+
+  .watchBtn {
+    margin: auto;
+  }
+
+  .bannerImgContainer img {
+    opacity: 0.7;
   }
 }
 
-
 @media screen and (max-width: 768px) {
+  .indexBanner {
+    padding: 0 10px ;
+    margin: 20px auto;
+    .left-container {
+      
+      backdrop-filter: blur(2px) saturate(180%);
+      background-color: rgba(0, 0, 0, 0.3);
 
-    .indexBanner{
-        
-        .indexBannerSub{
-            flex-direction: column-reverse;
-            .left-container{
-                .searchContainer{
-                    
-                }
-            }
-        }
+
+      .searchContainer {
+
+      }
     }
+  }
 }

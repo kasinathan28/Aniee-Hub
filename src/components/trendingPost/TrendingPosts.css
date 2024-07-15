@@ -1,0 +1,90 @@
+/* NewsCard.scss */
+.TrendingPostContainer {
+  max-width: var(--max-width);
+  margin: auto;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+@media screen and (max-width: 1024px) {
+  .TrendingPostContainer {
+    gap: 22px;
+  }
+}
+.TrendingPostContainer .title {
+  padding: 0px 20px;
+}
+.TrendingPostContainer .TrendingPosts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .TrendingPostContainer .TrendingPosts {
+    gap: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .TrendingPostContainer .TrendingPosts {
+    gap: 20px;
+  }
+}
+.TrendingPostContainer .TrendingPosts .newsCard {
+  flex-grow: 1;
+  max-width: 25%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  font-family: "Poppins";
+  background-color: rgba(255, 255, 255, 0.0509803922);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1024px) {
+  .TrendingPostContainer .TrendingPosts .newsCard {
+    max-width: 45%;
+    padding: 8px;
+    flex-grow: 1;
+  }
+}
+@media screen and (max-width: 596px) {
+  .TrendingPostContainer .TrendingPosts .newsCard {
+    max-width: 100%;
+  }
+}
+.TrendingPostContainer .TrendingPosts .newsHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.TrendingPostContainer .TrendingPosts .newsHeader .author {
+  font-weight: bold;
+  color: rgba(170, 170, 170, 0.6666666667);
+}
+.TrendingPostContainer .TrendingPosts .newsHeader .comments {
+  font-size: 14px;
+  color: rgba(170, 170, 170, 0.6666666667);
+}
+.TrendingPostContainer .TrendingPosts .newsTitle {
+  margin: 8px 0;
+}
+.TrendingPostContainer .TrendingPosts .newsImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 12px 0;
+}
+.TrendingPostContainer .TrendingPosts .newsExcerpt {
+  font-size: 16px;
+  color: rgba(170, 170, 170, 0.6666666667);
+}
+.TrendingPostContainer .TrendingPosts .readMore {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--pink-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pink-color);
+}/*# sourceMappingURL=TrendingPosts.css.map */

@@ -2,7 +2,7 @@
   position: relative;
   color: white;
   display: flex;
-  height: 700px;
+  height: 800px;
   flex-direction: column;
   background-size: cover;
   background-position: center;
@@ -63,6 +63,7 @@
 .animeDetails .content .subContent .left .textContent .animeFlex div {
   font-family: "Poppins", "Arial";
   color: #000;
+  border-radius: 2px;
   padding: 0 10px;
   background: var(--pink-color);
 }
@@ -156,7 +157,7 @@
 @media (max-width: 480px) {
   .animeDetails .content .subContent {
     gap: 5px;
-    padding: 20px 4px;
+    padding: 20px 10px;
   }
   .animeDetails .content .subContent .left {
     flex-direction: column;

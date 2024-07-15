@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import './animeCard.css';
-import AnimeToolTip from '../animeTooltip/AnimeToolTip';
-import { getAnimeInfo } from '../../services/animeServices';
+import React, { useState } from "react";
+import "./animeCard.css";
+import AnimeToolTip from "../animeTooltip/AnimeToolTip";
+import { getAnimeInfo } from "../../services/animeServices";
 
 const AnimeCard = ({ anime }) => {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -21,10 +21,10 @@ const AnimeCard = ({ anime }) => {
     setAnimeInfo(null);
   };
 
-  const handleDetailsPage =()=>{
-    window.location.href = `/anime/${anime.id}`
-  }
-  
+  const handleDetailsPage = () => {
+    window.location.href = `/anime/${anime.id}`;
+  };
+
   return (
     <div
       className="aniCardContainer"
@@ -32,6 +32,7 @@ const AnimeCard = ({ anime }) => {
       onMouseLeave={handleMouseLeave}
       onClick={handleDetailsPage}
     >
+      <p className="small">{anime.name}</p>
       <div className="leftContainer">
         <div className="rating">{anime.rank || anime.rating || "N/A"}</div>
         <div className="titleContainer">

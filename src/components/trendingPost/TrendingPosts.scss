@@ -1,0 +1,99 @@
+/* NewsCard.scss */
+.TrendingPostContainer {
+  max-width: var(--max-width);
+  margin: auto;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+
+  @media screen and (max-width: 1024px) {
+    gap: 22px;
+  }
+
+  .title{
+    padding: 0px 20px;
+  }
+
+  .TrendingPosts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    @media screen and (max-width: 768px) {
+      gap: 12px;
+    }
+
+    @media screen and (max-width: 480px) {
+        gap: 20px;
+        
+      }
+
+    .newsCard {
+      flex-grow: 1;
+      max-width: calc(25%);
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 16px;
+      font-family: "Poppins";
+      background-color: #ffffff0d;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+      @media screen and (max-width: 1024px) {
+        max-width: 45%;
+        padding: 8px;
+        flex-grow: 1;
+      }
+
+
+      @media screen and (max-width: 596px) {
+        max-width: 100%;
+        
+      }
+    }
+
+    .newsHeader {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+
+      .author {
+        font-weight: bold;
+        color: #aaaa;
+      }
+
+      .comments {
+        font-size: 14px;
+        color: #aaaa;
+      }
+    }
+
+    .newsTitle {
+      margin: 8px 0;
+    }
+
+    .newsImage {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 12px 0;
+    }
+
+    .newsExcerpt {
+      font-size: 16px;
+      color: #aaaa;
+    }
+
+    .readMore {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--pink-color);
+      text-decoration: none;
+      border-bottom: 1px solid var(--pink-color);
+    }
+  }
+}
